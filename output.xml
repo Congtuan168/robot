@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-01-11T12:37:52.904785" rpa="false" schemaversion="5">
+<suite id="s1" name="01.Test Web" source="E:\code\test\TestCase\01.test_web.robot">
+<kw name="Test-precondition" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-11T12:37:53.104797" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-11T12:37:53.103786" elapsed="2.350799"/>
+</kw>
+<status status="PASS" start="2025-01-11T12:37:53.103786" elapsed="2.350799"/>
+</kw>
+<test id="s1-t1" name="Search in Google" line="12">
+<kw name="Search Keyword" owner="Common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-11T12:37:55.456591" level="INFO">Typing text 'J97' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="0.048590"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-11T12:37:55.504177" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2025-01-11T12:37:55.795188" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-01-11T12:37:55.795188" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-11T12:37:55.504177" elapsed="1.532989"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${keyword}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-11T12:37:57.037166" elapsed="0.029999"/>
+</kw>
+<arg>J97</arg>
+<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="1.611578"/>
+</kw>
+<kw name="Find Text" owner="Common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-11T12:37:57.104166" level="INFO">Current page contains text 'Jack'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-01-11T12:37:57.068170" elapsed="0.035996"/>
+</kw>
+<arg>${TextExpected}</arg>
+<status status="PASS" start="2025-01-11T12:37:57.067165" elapsed="0.038009"/>
+</kw>
+<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="1.649587"/>
+</test>
+<kw name="Test-postCondition" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-11T12:37:57.105174" elapsed="2.104486"/>
+</kw>
+<status status="PASS" start="2025-01-11T12:37:57.105174" elapsed="2.104486"/>
+</kw>
+<status status="PASS" start="2025-01-11T12:37:52.905785" elapsed="6.303875"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="01.Test Web">01.Test Web</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

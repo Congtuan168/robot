@@ -1,0 +1,2 @@
+SW version: KOH.24.04.01
+MICOM: 24.04.03

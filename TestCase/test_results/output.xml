@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-01-02T23:15:55.183051" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="E:\code\test\TestCase\test.robot">
+<test id="s1-t1" name="AutoFlash" line="5">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-02T23:15:55.418052" level="INFO">AutoFlash test passed</msg>
+<arg>AutoFlash test passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-02T23:15:55.418052" elapsed="0.000000"/>
+</kw>
+<doc>Example test case</doc>
+<tag>AutoFlash</tag>
+<status status="PASS" start="2025-01-02T23:15:55.417059" elapsed="0.000993"/>
+</test>
+<test id="s1-t2" name="DEMO_001" line="10">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-02T23:15:55.419057" level="INFO">DEMO_001 test passed</msg>
+<arg>DEMO_001 test passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-02T23:15:55.419057" elapsed="0.000000"/>
+</kw>
+<doc>Example test case</doc>
+<tag>DEMO_001</tag>
+<status status="PASS" start="2025-01-02T23:15:55.418052" elapsed="0.001005"/>
+</test>
+<test id="s1-t3" name="DEMO_002" line="15">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-02T23:15:55.419057" level="INFO">DEMO_002 test passed</msg>
+<arg>DEMO_002 test passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-02T23:15:55.419057" elapsed="0.000000"/>
+</kw>
+<doc>Example test case</doc>
+<tag>DEMO_002</tag>
+<status status="PASS" start="2025-01-02T23:15:55.419057" elapsed="0.000000"/>
+</test>
+<status status="PASS" start="2025-01-02T23:15:55.184051" elapsed="0.235006"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AutoFlash</stat>
+<stat pass="1" fail="0" skip="0">DEMO_001</stat>
+<stat pass="1" fail="0" skip="0">DEMO_002</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-04-11T22:30:21.788954" rpa="false" schemaversion="5">
+<suite id="s1" name="02. Android" source="E:\code\test\TestCase\02. Android.robot">
+<kw name="Test-precondition" owner="Common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-11T22:30:22.556783" level="INFO">Pre-condition</msg>
+<arg>Pre-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-11T22:30:22.556506" elapsed="0.002241"/>
+</kw>
+<doc>Tiền điều kiện để thực thi test</doc>
+<status status="PASS" start="2025-04-11T22:30:22.555705" elapsed="0.003296"/>
+</kw>
+<test id="s1-t1" name="Verify About Phone" line="10">
+<kw name="Connect Adb server" owner="Android">
+<msg time="2025-04-11T22:30:22.560525" level="INFO">Device connected successfully.</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<status status="PASS" start="2025-04-11T22:30:22.559740" elapsed="0.000912"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-11T22:30:22.570596" level="INFO">Running command 'adb -s ce11160baddc4c2c04 shell am start -a android.settings.SETTINGS 2&gt;&amp;1'.</msg>
+<arg>adb -s ${DEVICE_SERIAL} shell am start -a android.settings.SETTINGS</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-11T22:30:22.560795" elapsed="0.182325"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-11T22:30:25.744759" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-11T22:30:22.743781" elapsed="3.001163"/>
+</kw>
+<kw name="Scroll into view" owner="Helper">
+<arg>${DEVICE_SERIAL}</arg>
+<arg>About phone</arg>
+<status status="PASS" start="2025-04-11T22:30:25.745104" elapsed="4.514327"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-11T22:30:33.260342" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-11T22:30:30.259713" elapsed="3.001001"/>
+</kw>
+<kw name="Click by text" owner="Helper">
+<arg>${DEVICE_SERIAL}</arg>
+<arg>About phone</arg>
+<status status="PASS" start="2025-04-11T22:30:33.261081" elapsed="0.683571"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-11T22:30:36.946247" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-11T22:30:33.945192" elapsed="3.001378"/>
+</kw>
+<kw name="Find text on screen" owner="Helper">
+<msg time="2025-04-11T22:30:47.507536" level="INFO">Object not found within the timeout period</msg>
+<msg time="2025-04-11T22:30:47.508058" level="INFO">${result} = False</msg>
+<var>${result}</var>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Phone_Name}</arg>
+<status status="PASS" start="2025-04-11T22:30:36.946910" elapsed="10.561328"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-11T22:30:50.509290" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-11T22:30:47.508675" elapsed="3.001001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${result}' == 'True'</arg>
+<arg>Log</arg>
+<arg>The Phone name correct</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-11T22:30:50.510119" elapsed="0.000688"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keyword And Return" owner="BuiltIn">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-04-11T22:30:50.512745" level="FAIL">The Phone name incorrect</msg>
+<arg>The Phone name incorrect</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-04-11T22:30:50.512234" elapsed="0.000898">The Phone name incorrect</status>
+</kw>
+<msg time="2025-04-11T22:30:50.513329" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>Fail</arg>
+<arg>The Phone name incorrect</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<status status="FAIL" start="2025-04-11T22:30:50.511834" elapsed="0.001695"/>
+</kw>
+<arg>'${result}' != 'True'</arg>
+<arg>Run Keyword And Return</arg>
+<arg>Fail</arg>
+<arg>The Phone name incorrect</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-04-11T22:30:50.511187" elapsed="0.002506"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<arg>adb -s ${DEVICE_SERIAL} shell input keyevent 3</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" start="2025-04-11T22:30:50.513961" elapsed="0.000053"/>
+</kw>
+<status status="FAIL" start="2025-04-11T22:30:22.559121" elapsed="27.955004">Invalid 'RETURN' usage.</status>
+</test>
+<kw name="Test-postCondition" owner="Common" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-11T22:30:50.515230" level="INFO">Post-condition</msg>
+<arg>Post-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-11T22:30:50.515115" elapsed="0.000186"/>
+</kw>
+<doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
+<status status="PASS" start="2025-04-11T22:30:50.514883" elapsed="0.000485"/>
+</kw>
+<status status="FAIL" start="2025-04-11T22:30:21.800224" elapsed="28.715191"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="02. Android" id="s1" pass="0" fail="1" skip="0">02. Android</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
