@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-20T10:11:39.412036" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot" source="C:\Users\Administrator\PycharmProjects\robot">
+<suite id="s1-s1" name="TestCase" source="C:\Users\Administrator\PycharmProjects\robot\TestCase">
+<suite id="s1-s1-s1" name="01.Test Web" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\01.test_web.robot">
+<kw name="Test-precondition" owner="Common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-20T10:11:40.120755" level="INFO">Pre-condition</msg>
+<arg>Pre-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-20T10:11:40.120480" elapsed="0.000462"/>
+</kw>
+<doc>Tiền điều kiện để thực thi test</doc>
+<status status="PASS" start="2025-11-20T10:11:40.119503" elapsed="0.001601"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Search in Google" line="12">
+<kw name="Open Web" owner="Common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-20T10:11:40.124335" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-20T10:11:40.123976" elapsed="13.498952"/>
+</kw>
+<doc>Open 1 web với địa chỉ cụ thể trên trình duyệt example: open browser Chrome, truy cập tới trang google.com</doc>
+<status status="PASS" start="2025-11-20T10:11:40.123448" elapsed="13.499747"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-20T10:11:55.623951" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-20T10:11:53.623403" elapsed="2.000787"/>
+</kw>
+<kw name="Search Keyword" owner="Common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-20T10:11:55.625609" level="INFO">Typing text 'MTP' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-20T10:11:55.625076" elapsed="0.062614"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-20T10:11:55.688608" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2025-11-20T10:11:55.981014" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-20T10:11:55.981203" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-20T10:11:55.688045" elapsed="1.859711"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${keyword}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-20T10:11:57.548195" elapsed="0.012945"/>
+</kw>
+<arg>MTP</arg>
+<doc>Open web browser to research the object</doc>
+<status status="PASS" start="2025-11-20T10:11:55.624470" elapsed="1.937002"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-20T10:11:59.563178" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-20T10:11:57.561691" elapsed="2.002376"/>
+</kw>
+<kw name="Find Text" owner="Common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-20T10:11:59.755885" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-20T10:11:59.756145" level="FAIL">Page should have contained text 'Sơn Tùng M-TP' but did not.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-11-20T10:11:59.567186" elapsed="0.210364">Page should have contained text 'Sơn Tùng M-TP' but did not.</status>
+</kw>
+<arg>${TextExpected}</arg>
+<doc>Sử dụng keyword page should contain trong thư viện selenium kiểm tra element "text" xuất hiện trên web đang mở</doc>
+<status status="FAIL" start="2025-11-20T10:11:59.565035" elapsed="0.212770">Page should have contained text 'Sơn Tùng M-TP' but did not.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-20T10:11:59.778006" elapsed="0.000149"/>
+</kw>
+<kw name="Close Web" owner="Common">
+<doc>Đóng browser</doc>
+<status status="NOT RUN" start="2025-11-20T10:11:59.778348" elapsed="0.000134"/>
+</kw>
+<status status="FAIL" start="2025-11-20T10:11:40.121238" elapsed="19.657446">Page should have contained text 'Sơn Tùng M-TP' but did not.</status>
+</test>
+<kw name="Test-postCondition" owner="Common" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-20T10:11:59.783176" level="INFO">Post-condition</msg>
+<arg>Post-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-20T10:11:59.782956" elapsed="0.000381"/>
+</kw>
+<doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
+<status status="PASS" start="2025-11-20T10:11:59.782581" elapsed="0.000886"/>
+</kw>
+<status status="FAIL" start="2025-11-20T10:11:39.485402" elapsed="20.298152"/>
+</suite>
+<status status="FAIL" start="2025-11-20T10:11:39.482874" elapsed="20.303026"/>
+</suite>
+<status status="FAIL" start="2025-11-20T10:11:39.423326" elapsed="20.363932"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot" id="s1" pass="0" fail="1" skip="0">Robot</stat>
+<stat name="TestCase" id="s1-s1" pass="0" fail="1" skip="0">Robot.TestCase</stat>
+<stat name="01.Test Web" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot.TestCase.01.Test Web</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-20T10:11:40.086182" level="ERROR">Error in file 'C:\Users\Administrator\PycharmProjects\robot\Resource\Common.resource' on line 7: Importing library 'C:\Users\Administrator\PycharmProjects\robot\Plugin\Android.py' failed: ModuleNotFoundError: No module named 'ppadb'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\robot\Plugin\Android.py", line 3, in &lt;module&gt;
+    from ppadb.client import Client as AdbClient
+PYTHONPATH:
+  C:\Users\Administrator\PycharmProjects\robot\Plugin
+  C:\Users\Administrator\PycharmProjects\robot\lib
+  C:\Users\Administrator\PycharmProjects\robot\resources
+  C:\Users\Administrator\AppData\Roaming\JetBrains\PyCharm2025.2\plugins\robotcode4ij\data\bundled\libs
+  C:\Users\Administrator\AppData\Roaming\JetBrains\PyCharm2025.2\plugins\robotcode4ij\data\bundled\tool\robotcode
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python314\python314.zip
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python314\DLLs
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python314
+  C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages</msg>
+</errors>
+</robot>
