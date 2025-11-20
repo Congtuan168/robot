@@ -1,4 +1,4 @@
-from symtable import Symbol
+# from symtable import Symbol
 from robot.api.deco import keyword
 from ppadb.client import Client as AdbClient
 import subprocess
@@ -6,7 +6,7 @@ import subprocess
 
 class Android:
     @keyword('Shell')
-    def send_adb_command(sefl, device_id, command):
+    def send_adb_command(self, device_id, command):
         try:
             result = subprocess.run(
                 ["adb", "-s", device_id, "shell", command],
@@ -31,7 +31,7 @@ class Android:
         return device
 
     @keyword('Disconnect Adb server')
-    def send_adb_command(self, device, command):
+    def send_adb_server_command(self, device, command):
         try:
             result = device.shell(command)
             print(result)

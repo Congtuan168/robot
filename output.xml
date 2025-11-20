@@ -1,71 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-01-11T12:37:52.904785" rpa="false" schemaversion="5">
-<suite id="s1" name="01.Test Web" source="E:\code\test\TestCase\01.test_web.robot">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-20T16:48:27.850583" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot" source="C:\Users\Administrator\PycharmProjects\robot">
+<suite id="s1-s1" name="TestCase" source="C:\Users\Administrator\PycharmProjects\robot\TestCase">
+<suite id="s1-s1-s1" name="01.Test Web" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\01.test_web.robot">
 <kw name="Test-precondition" owner="Common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-20T16:48:28.434939" level="INFO">Pre-condition</msg>
+<arg>Pre-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-20T16:48:28.434800" elapsed="0.000202"/>
+</kw>
+<doc>Tiền điều kiện để thực thi test</doc>
+<status status="PASS" start="2025-11-20T16:48:28.434067" elapsed="0.001038"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Pause video" line="33">
+<kw name="Open YouTube" owner="Common">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-11T12:37:53.104797" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
-<arg>${URL}</arg>
+<msg time="2025-11-20T16:48:28.436023" level="INFO">Opening browser 'chrome' to base url 'https://www.youtube.com'.</msg>
+<arg>https://www.youtube.com</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-11T12:37:53.103786" elapsed="2.350799"/>
+<status status="PASS" start="2025-11-20T16:48:28.435843" elapsed="10.533217"/>
 </kw>
-<status status="PASS" start="2025-01-11T12:37:53.103786" elapsed="2.350799"/>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-11-20T16:48:38.969312" elapsed="0.117827"/>
 </kw>
-<test id="s1-t1" name="Search in Google" line="12">
-<kw name="Search Keyword" owner="Common">
+<status status="PASS" start="2025-11-20T16:48:28.435591" elapsed="10.651677"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-20T16:48:40.088739" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-20T16:48:39.087937" elapsed="1.000912"/>
+</kw>
+<kw name="Search And Open Video" owner="Common">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-11T12:37:55.456591" level="INFO">Typing text 'J97' into text field 'name=q'.</msg>
-<arg>name=q</arg>
+<msg time="2025-11-20T16:48:40.090136" level="INFO">Typing text 'conan 944' into text field 'name:search_query'.</msg>
+<arg>name:search_query</arg>
 <arg>${keyword}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="0.048590"/>
+<status status="PASS" start="2025-11-20T16:48:40.089770" elapsed="0.109467"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-01-11T12:37:55.504177" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
-<msg time="2025-01-11T12:37:55.795188" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2025-01-11T12:37:55.795188" level="INFO">Releasing special key ENTER.</msg>
-<arg>name=q</arg>
+<msg time="2025-11-20T16:48:40.199820" level="INFO">Sending key(s) ('ENTER',) to name:search_query element.</msg>
+<msg time="2025-11-20T16:48:40.539442" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-20T16:48:40.539525" level="INFO">Releasing special key ENTER.</msg>
+<arg>name:search_query</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-01-11T12:37:55.504177" elapsed="1.532989"/>
+<status status="PASS" start="2025-11-20T16:48:40.199451" elapsed="0.410347"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${keyword}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-01-11T12:37:57.037166" elapsed="0.029999"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:#video-title</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-20T16:48:40.610003" elapsed="0.756836"/>
 </kw>
-<arg>J97</arg>
-<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="1.611578"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-20T16:48:41.367512" level="INFO">Clicking element 'xpath:(//a[@id='video-title'])[1]'.</msg>
+<arg>xpath:(//a[@id='video-title'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-20T16:48:41.367186" elapsed="0.290710"/>
 </kw>
-<kw name="Find Text" owner="Common">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-01-11T12:37:57.104166" level="INFO">Current page contains text 'Jack'.</msg>
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-01-11T12:37:57.068170" elapsed="0.035996"/>
+<arg>conan 944</arg>
+<status status="PASS" start="2025-11-20T16:48:40.089455" elapsed="1.568574"/>
 </kw>
-<arg>${TextExpected}</arg>
-<status status="PASS" start="2025-01-11T12:37:57.067165" elapsed="0.038009"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-20T16:49:01.659294" level="INFO">Slept 20 seconds.</msg>
+<arg>20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-20T16:48:41.658722" elapsed="20.001084"/>
 </kw>
-<status status="PASS" start="2025-01-11T12:37:55.455587" elapsed="1.649587"/>
+<kw name="Pause Current Video" owner="Common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-11-20T16:49:01.663219" level="INFO">Simulating Mouse Over on element 'css:video.html5-main-video'.</msg>
+<arg>css:video.html5-main-video</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-11-20T16:49:01.662549" elapsed="0.285800"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-20T16:49:02.950354" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-20T16:49:01.949122" elapsed="1.001340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-20T16:49:02.950821" level="INFO">Clicking element 'css:button.ytp-play-button'.</msg>
+<msg time="2025-11-20T16:49:04.370733" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-20T16:49:04.370951" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="ytp-play-button ytp-button" title="" aria-keyshortcuts="k" data-title-no-tooltip="Pause" data-tooltip-title="Pause (k)" aria-label="Play (k)"&gt;...&lt;/button&gt; is not clickable at point (125, 768). Other element would receive the click: &lt;yt-formatted-string class="style-scope yt-mealbar-promo-renderer"&gt;...&lt;/yt-formatted-string&gt;
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F3A080D5+2992373]
+	(No symbol) [0x00007FF6F369BFD0]
+	(No symbol) [0x00007FF6F353590A]
+	(No symbol) [0x00007FF6F3590F2E]
+	(No symbol) [0x00007FF6F358E9CC]
+	(No symbol) [0x00007FF6F358BBA6]
+	(No symbol) [0x00007FF6F358AB01]
+	(No symbol) [0x00007FF6F357CD40]
+	(No symbol) [0x00007FF6F35AF36A]
+	(No symbol) [0x00007FF6F357C596]
+	(No symbol) [0x00007FF6F35AF580]
+	(No symbol) [0x00007FF6F35CF584]
+	(No symbol) [0x00007FF6F35AF113]
+	(No symbol) [0x00007FF6F357A918]
+	(No symbol) [0x00007FF6F357BA81]
+	GetHandleVerifier [0x00007FF6F3A66A2D+3379789]
+	GetHandleVerifier [0x00007FF6F3A7C32D+3468109]
+	GetHandleVerifier [0x00007FF6F3A70043+3418211]
+	GetHandleVerifier [0x00007FF6F37FC78B+847787]
+	(No symbol) [0x00007FF6F36A757F]
+	(No symbol) [0x00007FF6F36A2FC4]
+	(No symbol) [0x00007FF6F36A315D]
+	(No symbol) [0x00007FF6F3692979]
+	BaseThreadInitThunk [0x00007FFE8F547374+20]
+	RtlUserThreadStart [0x00007FFE90E9CC91+33]
+</msg>
+<arg>css:button.ytp-play-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-11-20T16:49:02.950633" elapsed="1.423197">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="ytp-play-button ytp-button" title="" aria-keyshortcuts="k" data-title-no-tooltip="Pause" data-tooltip-title="Pause (k)" aria-label="Play (k)"&gt;...&lt;/button&gt; is not clickable at point (125, 768). Other element would receive the click: &lt;yt-formatted-string class="style-scope yt-mealbar-promo-renderer"&gt;...&lt;/yt-formatted-string&gt;
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F3A080D5+2992373]
+	(No symbol) [0x00007FF6F369BFD0]
+	(No symbol) [0x00007FF6F353590A]
+	(No symbol) [0x00007FF6F3590F2E]
+	(No symbol) [0x00007FF6F358E9CC]
+	(No symbol) [0x00007FF6F358BBA6]
+	(No symbol) [0x00007FF6F358AB01]
+	(No symbol) [0x00007FF6F357CD40]
+	(No symbol) [0x00007FF6F35AF36A]
+	(No symbol) [0x00007FF6F357C596]
+	(No symbol) [0x00007FF6F35AF580]
+	(No symbol) [0x00007FF6F35CF584]
+	(No symbol) [0x00007FF6F35AF113]
+	(No symbol) [0x00007FF6F357A918]
+	(No symbol) [0x00007FF6F357BA81]
+	GetHandleVerifier [0x00007FF6F3A66A2D+3379789]
+	GetHandleVerifier [0x00007FF6F3A7C32D+3468109]
+	GetHandleVerifier [0x00007FF6F3A70043+3418211]
+	GetHandleVerifier [0x00007FF6F37FC78B+847787]
+	(No symbol) [0x00007FF6F36A757F]
+	(No symbol) [0x00007FF6F36A2FC4]
+	(No symbol) [0x00007FF6F36A315D]
+	(No symbol) [0x00007FF6F3692979]
+	BaseThreadInitThunk [0x00007FFE8F547374+20]
+	RtlUserThreadStart [0x00007FFE90E9CC91+33]
+</status>
+</kw>
+<status status="FAIL" start="2025-11-20T16:49:01.661458" elapsed="2.712595">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="ytp-play-button ytp-button" title="" aria-keyshortcuts="k" data-title-no-tooltip="Pause" data-tooltip-title="Pause (k)" aria-label="Play (k)"&gt;...&lt;/button&gt; is not clickable at point (125, 768). Other element would receive the click: &lt;yt-formatted-string class="style-scope yt-mealbar-promo-renderer"&gt;...&lt;/yt-formatted-string&gt;
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F3A080D5+2992373]
+	(No symbol) [0x00007FF6F369BFD0]
+	(No symbol) [0x00007FF6F353590A]
+	(No symbol) [0x00007FF6F3590F2E]
+	(No symbol) [0x00007FF6F358E9CC]
+	(No symbol) [0x00007FF6F358BBA6]
+	(No symbol) [0x00007FF6F358AB01]
+	(No symbol) [0x00007FF6F357CD40]
+	(No symbol) [0x00007FF6F35AF36A]
+	(No symbol) [0x00007FF6F357C596]
+	(No symbol) [0x00007FF6F35AF580]
+	(No symbol) [0x00007FF6F35CF584]
+	(No symbol) [0x00007FF6F35AF113]
+	(No symbol) [0x00007FF6F357A918]
+	(No symbol) [0x00007FF6F357BA81]
+	GetHandleVerifier [0x00007FF6F3A66A2D+3379789]
+	GetHandleVerifier [0x00007FF6F3A7C32D+3468109]
+	GetHandleVerifier [0x00007FF6F3A70043+3418211]
+	GetHandleVerifier [0x00007FF6F37FC78B+847787]
+	(No symbol) [0x00007FF6F36A757F]
+	(No symbol) [0x00007FF6F36A2FC4]
+	(No symbol) [0x00007FF6F36A315D]
+	(No symbol) [0x00007FF6F3692979]
+	BaseThreadInitThunk [0x00007FFE8F547374+20]
+	RtlUserThreadStart [0x00007FFE90E9CC91+33]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-20T16:49:04.374492" elapsed="0.000039"/>
+</kw>
+<kw name="Search And Open Video" owner="Common">
+<arg>conan 945</arg>
+<status status="NOT RUN" start="2025-11-20T16:49:04.374980" elapsed="0.000042"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-20T16:49:04.375435" elapsed="0.000035"/>
+</kw>
+<kw name="Pause Current Video" owner="Common">
+<status status="NOT RUN" start="2025-11-20T16:49:04.375822" elapsed="0.000039"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-20T16:49:04.376291" elapsed="0.000033"/>
+</kw>
+<kw name="Close Web" owner="Common">
+<doc>Đóng browser</doc>
+<status status="NOT RUN" start="2025-11-20T16:49:04.377095" elapsed="0.000040"/>
+</kw>
+<status status="FAIL" start="2025-11-20T16:48:28.435182" elapsed="35.942232">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="ytp-play-button ytp-button" title="" aria-keyshortcuts="k" data-title-no-tooltip="Pause" data-tooltip-title="Pause (k)" aria-label="Play (k)"&gt;...&lt;/button&gt; is not clickable at point (125, 768). Other element would receive the click: &lt;yt-formatted-string class="style-scope yt-mealbar-promo-renderer"&gt;...&lt;/yt-formatted-string&gt;
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F3A080D5+2992373]
+	(No symbol) [0x00007FF6F369BFD0]
+	(No symbol) [0x00007FF6F353590A]
+	(No symbol) [0x00007FF6F3590F2E]
+	(No symbol) [0x00007FF6F358E9CC]
+	(No symbol) [0x00007FF6F358BBA6]
+	(No symbol) [0x00007FF6F358AB01]
+	(No symbol) [0x00007FF6F357CD40]
+	(No symbol) [0x00007FF6F35AF36A]
+	(No symbol) [0x00007FF6F357C596]
+	(No symbol) [0x00007FF6F35AF580]
+	(No symbol) [0x00007FF6F35CF584]
+	(No symbol) [0x00007FF6F35AF113]
+	(No symbol) [0x00007FF6F357A918]
+	(No symbol) [0x00007FF6F357BA81]
+	GetHandleVerifier [0x00007FF6F3A66A2D+3379789]
+	GetHandleVerifier [0x00007FF6F3A7C32D+3468109]
+	GetHandleVerifier [0x00007FF6F3A70043+3418211]
+	GetHandleVerifier [0x00007FF6F37FC78B+847787]
+	(No symbol) [0x00007FF6F36A757F]
+	(No symbol) [0x00007FF6F36A2FC4]
+	(No symbol) [0x00007FF6F36A315D]
+	(No symbol) [0x00007FF6F3692979]
+	BaseThreadInitThunk [0x00007FFE8F547374+20]
+	RtlUserThreadStart [0x00007FFE90E9CC91+33]
+</status>
 </test>
 <kw name="Test-postCondition" owner="Common" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-11T12:37:57.105174" elapsed="2.104486"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-20T16:49:04.378671" level="INFO">Post-condition</msg>
+<arg>Post-condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-20T16:49:04.378561" elapsed="0.000163"/>
 </kw>
-<status status="PASS" start="2025-01-11T12:37:57.105174" elapsed="2.104486"/>
+<doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
+<status status="PASS" start="2025-11-20T16:49:04.378373" elapsed="0.000420"/>
 </kw>
-<status status="PASS" start="2025-01-11T12:37:52.905785" elapsed="6.303875"/>
+<status status="FAIL" start="2025-11-20T16:48:27.880998" elapsed="36.497839"/>
+</suite>
+<status status="FAIL" start="2025-11-20T16:48:27.879825" elapsed="36.499853"/>
+</suite>
+<status status="FAIL" start="2025-11-20T16:48:27.851816" elapsed="36.528508"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="01.Test Web">01.Test Web</stat>
+<stat name="Robot" id="s1" pass="0" fail="1" skip="0">Robot</stat>
+<stat name="TestCase" id="s1-s1" pass="0" fail="1" skip="0">Robot.TestCase</stat>
+<stat name="01.Test Web" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot.TestCase.01.Test Web</stat>
 </suite>
 </statistics>
 <errors>

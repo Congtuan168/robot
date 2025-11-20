@@ -6,6 +6,7 @@ Suite Teardown      Test-postCondition
 *** Variables ***
 ${Phone_Name}   Galaxy S7 edge
 
+
 *** Test Cases ***
 Verify About Phone
     Connect Adb server    ${DEVICE_SERIAL}

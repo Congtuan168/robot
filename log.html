@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.1.1 (Python 3.12.0 on win32)" name="Generator">
+<meta content="Robot Framework 7.3.2 (Python 3.14.0 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -724,10 +724,13 @@ function toggleSuite(suiteId) {
     toggleElement(suiteId, ['keyword', 'suite', 'test']);
 }
 function toggleTest(testId) {
-    toggleElement(testId, ['keyword']);
     var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
+    var autoExpand = test.status == "FAIL" || test.status == "SKIP";
+    var closed = $('#' + testId).children('.element-header').hasClass('closed');
+    if (autoExpand && closed)
         expandFailed(test);
+    else
+        toggleElement(testId, ['keyword']);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -1512,7 +1515,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2071,25 +2074,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,6304],[],[[4,0,0,[],[1,2550,1650],[[0,5,6,0,0,7,0,0,[1,2550,1612],[[0,8,9,0,10,11,0,0,[1,2550,49],[[2551,2,12]]],[0,13,9,0,14,15,0,0,[1,2598,1533],[[2598,2,16],[2889,2,17],[2889,2,18]]],[0,19,9,0,20,21,0,0,[1,4131,30],[]]]],[0,22,6,0,0,23,0,0,[1,4161,38],[[0,24,9,0,25,26,0,0,[1,4162,36],[[4198,2,27]]]]]]]],[[1,28,6,0,0,0,0,0,[1,198,2351],[[0,29,9,0,30,31,0,0,[1,198,2351],[[199,2,32]]]]],[2,33,6,0,0,0,0,0,[1,4199,2104],[[0,34,9,0,35,0,0,0,[1,4199,2104],[]]]]],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,36529],[[4,5,4,0,[],[0,28,36500],[[6,7,8,0,[],[0,29,36498],[],[[9,0,0,[],[0,583,35942,10],[[0,11,12,0,0,0,0,0,[1,584,10652],[[0,13,14,0,15,16,0,0,[1,584,10533],[[584,2,17]]],[0,18,14,0,19,20,0,0,[1,11117,118],[]]]],[0,21,22,0,23,24,0,0,[1,11236,1001],[[12237,2,25]]],[0,26,12,0,0,27,0,0,[1,12237,1569],[[0,28,14,0,29,30,0,0,[1,12238,109],[[12238,2,31]]],[0,32,14,0,33,34,0,0,[1,12347,410],[[12348,2,35],[12687,2,36],[12688,2,37]]],[0,38,14,0,39,40,0,0,[1,12758,757],[]],[0,41,14,0,42,43,0,0,[1,13515,291],[[13516,2,44]]]]],[0,21,22,0,23,45,0,0,[1,13807,20001],[[33807,2,46]]],[0,47,12,0,0,0,0,0,[0,33809,2713],[[0,48,14,0,49,50,0,0,[1,33811,286],[[33811,2,51]]],[0,21,22,0,23,24,0,0,[1,34097,1001],[[35098,2,25]]],[0,41,14,0,42,52,0,0,[0,35099,1423],[[35099,2,53],[36519,2,54],[36519,5,10]]]]],[0,21,22,0,23,24,0,0,[3,36522,0],[]],[0,26,12,0,0,55,0,0,[3,36523,0],[]],[0,21,22,0,23,24,0,0,[3,36523,0],[]],[0,47,12,0,0,0,0,0,[3,36524,0],[]],[0,21,22,0,23,24,0,0,[3,36524,0],[]],[0,56,12,0,57,0,0,0,[3,36525,0],[]]]]],[[1,58,12,0,59,0,0,0,[1,582,1],[[0,60,22,0,61,62,0,0,[1,583,0],[[583,2,62]]]]],[2,63,12,0,64,0,0,0,[1,36526,0],[[0,60,22,0,61,65,0,0,[1,36527,0],[[36527,2,65]]]]]],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*01.Test Web","*E:\\code\\test\\TestCase\\01.test_web.robot","*TestCase/01.test_web.robot","*Search in Google","*Search Keyword","*Common","*J97","*Input Text","*SeleniumLibrary","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*name=q    ${keyword}","*Typing text 'J97' into text field 'name=q'.","*Press Keys","*<p>Simulates the user pressing key(s) to an element or on the active browser.\x3c/p>","*name=q    ENTER","*Sending key(s) ('ENTER',) to name=q element.","*Pressing special key ENTER to element.","*Releasing special key ENTER.","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*${keyword}","*Find Text","*${TextExpected}","*Page Should Contain","*<p>Verifies that current page contains <code>text\x3c/code>.\x3c/p>","*${text}","*Current page contains text 'Jack'.","*Test-precondition","*Open Browser","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${URL}    chrome","*Opening browser 'chrome' to base url '<a href=\"https://www.google.com\">https://www.google.com\x3c/a>'.","*Test-postCondition","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Robot","*C:\\Users\\Administrator\\PycharmProjects\\robot","*.","*TestCase","*C:\\Users\\Administrator\\PycharmProjects\\robot\\TestCase","*01.Test Web","*C:\\Users\\Administrator\\PycharmProjects\\robot\\TestCase\\01.test_web.robot","*TestCase/01.test_web.robot","*Pause video","eNq9lEtvm0AQx8/xp1hRKbLl8H4skDgSxqbNoQ81aS9VDmsYx8iYRbuDHX/7LrbTJlKFcypCAmZ+Ozvzn1nmFWygxrQq8/VdjSByaBCK+XP3LHkdk88gJXuCmMARJXnHkvIvHJP5yXVZ4fWiReS1opiUE22Pjd5UbK+fzN338VUjWGIFE00jTJRMX8NerrjAvEW1bq2RgiHTD4xecx05r7BsJto31kp48R6N+inSwUWG69EpZMUWUCmz2v9gvXzCa8MwuizNYxKdhZSS1PxUF1tUQBiShqsCydB2/CtCg3BkkK+4AvFHhB1vq4IIyKHcAlGu4/L4IMEe9SUXG4ZKHF2iKOunFz0k7lU9MucNKC30DbBqwYTeCL7huoC6AAHiTaL/CNa5B4QM71VrVI9UL5Y8JvlKBYGJ7dqGZQSUhoZj+aNrknFBCp63Xd6s6ylRN65U1SAEF1ekqYAp3balLDEmN4ysBCwn2gqxkbFp7nY7Q6q667LdGAVszTfBzB0sCqFEECYK3ir5VBc5qizNQ3j54STZQZ9XUwMvI6bd/q+dbkx2O7hHlq9RsBziwcVHwE+sLir4CaJclqrBv6xnS100y4LMTazQmvljJ4ocl7qPg4vhF07kfrPg1egtGUTTbGb1Eb7rR1bSS0RW5sx7iXAepWk/MZ0mQT+RTC27l6DpzOuvJVEVJ2di+FFwJoYf9u+SKsI7E8O23f48ksgO+4lpEnZ6nJuFIEic2dh1aUTD6B08Td2O94LQtt7FW5bnKt4OHfsd+dAspeF0HHrqpNPe0UyoT7N+wslSr59wbX/WfwCciHZlTtW/5EH9QVhxV5f4sGrr9StyHma+R13qjZ2u99+x+iFBHHl1MgW+ZiOrG/fIVqI/Dn4DuecR+A==","*Open YouTube","*Common","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*<a href=\"https://www.youtube.com\">https://www.youtube.com\x3c/a>    chrome","*Opening browser 'chrome' to base url '<a href=\"https://www.youtube.com\">https://www.youtube.com\x3c/a>'.","*Set Window Size","*<p>Sets current windows size to given <code>width\x3c/code> and <code>height\x3c/code>.\x3c/p>","*1920    1080","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*1","*Slept 1 second.","*Search And Open Video","*conan 944","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*name:search_query    ${keyword}","*Typing text 'conan 944' into text field 'name:search_query'.","*Press Keys","*<p>Simulates the user pressing key(s) to an element or on the active browser.\x3c/p>","*name:search_query    ENTER","*Sending key(s) ('ENTER',) to name:search_query element.","*Pressing special key ENTER to element.","*Releasing special key ENTER.","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*css:#video-title","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*xpath:(//a[@id='video-title'])[1]","*Clicking element 'xpath:(//a[@id='video-title'])[1]'.","*20","*Slept 20 seconds.","*Pause Current Video","*Mouse Over","*<p>Simulates hovering the mouse over the element <code>locator\x3c/code>.\x3c/p>","*css:video.html5-main-video","*Simulating Mouse Over on element 'css:video.html5-main-video'.","*css:button.ytp-play-button","*Clicking element 'css:button.ytp-play-button'.","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-31.png\"><img src=\"selenium-screenshot-31.png\" width=\"800px\">\x3c/a>","*conan 945","*Close Web","*<p>Đóng browser\x3c/p>","*Test-precondition","*<p>Tiền điều kiện để thực thi test\x3c/p>","*Log","*<p>Logs the given message with the given level.\x3c/p>","*Pre-condition","*Test-postCondition","*<p>Trả lại môi trường ban đầu để sẵn sàng cho test case mới\x3c/p>","*Post-condition"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:02","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:06","fail":0,"id":"s1","label":"01.Test Web","name":"01.Test Web","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:36","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:37","fail":1,"id":"s1","label":"Robot","name":"Robot","pass":0,"skip":0},{"elapsed":"00:00:36","fail":1,"id":"s1-s1","label":"Robot.TestCase","name":"TestCase","pass":0,"skip":0},{"elapsed":"00:00:36","fail":1,"id":"s1-s1-s1","label":"Robot.TestCase.01.Test Web","name":"01.Test Web","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1736573872906;
+window.output["baseMillis"] = 1763632107852;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 6307;
+window.output["generated"] = 36534;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2204,7 +2207,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

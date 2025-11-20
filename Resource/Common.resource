@@ -3,11 +3,11 @@ Library     SeleniumLibrary
 Library     OperatingSystem
 Library     Process
 Library     String
-Library     ../Plugin/Android.py
 Library     ../Plugin/Helper.py
+Library     ../Plugin/Android.py
 
 *** Variables ***
-${URL}     https://www.google.com
+${URL}     https://robotcode.io/
 ${DEVICE_SERIAL}    ce11160baddc4c2c04
 
 
@@ -23,6 +23,7 @@ Test-postCondition
 Open Web
     [Documentation]     Open 1 web với địa chỉ cụ thể trên trình duyệt example: open browser Chrome, truy cập tới trang google.com
     Open Browser    ${URL}   chrome
+    Set Window Size    1920    1080
 
 Close Web
     [Documentation]     Đóng browser
@@ -31,8 +32,8 @@ Close Web
 Search Keyword
     [Documentation]     Open web browser to research the object
     [Arguments]    ${keyword}
-    Input Text    name=q    ${keyword}
-    Press Keys    name=q    ENTER
+    Input Text  name="search_query"     ${keyword}
+    Press Keys  name="search_query"     ENTER
     Wait Until Page Contains    ${keyword}
 
 Find Text
@@ -44,3 +45,29 @@ Go To Android Settings
     [Documentation]     Go to settings on android device
     [Arguments]     ${ADB_SERIAL}=${DEVICE_SERIAL}
     Run    adb -s ${ADB_SERIAL} shell am start -a android.settings.SETTINGS
+
+Enable Switch Dark Mode
+    [Documentation]    Enable Dark Mode on web
+    [Arguments]    ${locators}
+    Wait Until Element Is Visible        ${locators}
+    ${state}=    Get Element Attribute    ${locators}    aria-checked
+    Run Keyword If    "${state}" == "false"    Click Element    ${locators}
+    
+    
+Open YouTube
+    Open Browser    https://www.youtube.com    chrome
+    Set Window Size    1920    1080
+
+Search And Open Video
+    [Arguments]    ${keyword}
+    Input Text  name:search_query     ${keyword}
+    Press Keys  name:search_query     ENTER
+    Wait Until Page Contains Element    css:#video-title
+    Click Element    xpath:(//a[@id='video-title'])[1]   # first result
+
+Pause Current Video
+    # Move mouse to video area (YouTube shows pause overlay only when hovered)
+    Mouse Over    css:video.html5-main-video
+    Sleep    1
+    # Click play/pause button
+    Click Element    css:button.ytp-play-button
