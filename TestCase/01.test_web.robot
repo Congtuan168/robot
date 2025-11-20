@@ -38,7 +38,7 @@ Pause video
     Pause Current Video
     Sleep    1
     Search And Open Video    conan 945
-    Sleep    1
+    Sleep    10
     Pause Current Video
     Sleep    1
     Close Web

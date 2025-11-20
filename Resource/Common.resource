@@ -60,14 +60,10 @@ Open YouTube
 
 Search And Open Video
     [Arguments]    ${keyword}
-    Input Text  name:search_query     ${keyword}
-    Press Keys  name:search_query     ENTER
-    Wait Until Page Contains Element    css:#video-title
-    Click Element    xpath:(//a[@id='video-title'])[1]   # first result
+    Input Text    name:search_query    ${keyword}
+    Press Keys    name:search_query    ENTER
+    Wait Until Page Contains Element    xpath:(//a[@id='video-title'])[1]
+    Click Element    xpath:(//a[@id='video-title'])[1]
 
 Pause Current Video
-    # Move mouse to video area (YouTube shows pause overlay only when hovered)
-    Mouse Over    css:video.html5-main-video
-    Sleep    1
-    # Click play/pause button
-    Click Element    css:button.ytp-play-button
+    Execute JavaScript    document.querySelector("video").pause();
