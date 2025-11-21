@@ -8,7 +8,7 @@ Library     ../Plugin/Android.py
 
 *** Variables ***
 ${URL}     https://robotcode.io/
-${DEVICE_SERIAL}    ce11160baddc4c2c04
+${DEVICE_SERIAL}    R5CX90YBT0R
 
 
 *** Keywords ***

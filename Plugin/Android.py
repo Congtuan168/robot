@@ -2,6 +2,7 @@
 from robot.api.deco import keyword
 from ppadb.client import Client as AdbClient
 import subprocess
+import uiautomator2 as u2
 
 
 class Android:

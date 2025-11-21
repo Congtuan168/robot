@@ -76,7 +76,7 @@ class Helper:
         device(scrollable=True).scroll.to(text=textObject)
 
     @keyword('Find text on screen')
-    def findTextOnScreen(sefl, device_serial, textObject):
+    def findTextOnScreen(self, device_serial, textObject):
         try:
             device = u2.connect(device_serial)
         except Exception as e:
@@ -85,13 +85,11 @@ class Helper:
         start_time = time.time()
         while time.time() - start_time < timeout:
             if device(text=textObject).exists:
-                return  True
-                break
-            else:
-                time.sleep(1)
-        if not device(text=textObject).exists:
-            print("Object not found within the timeout period")
-            return False
+                return True
+            time.sleep(1)
+
+        print("Object not found within the timeout period")
+        return False
 
 if __name__ == '__main__':
     find = Helper()

@@ -1,132 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-20T17:36:43.982168" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-21T17:34:50.199961" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot" source="C:\Users\Administrator\PycharmProjects\robot">
 <suite id="s1-s1" name="TestCase" source="C:\Users\Administrator\PycharmProjects\robot\TestCase">
-<suite id="s1-s1-s1" name="01.Test Web" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\01.test_web.robot">
+<suite id="s1-s1-s1" name="02. Android" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\02. Android.robot">
 <kw name="Test-precondition" owner="Common" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-20T17:36:44.540313" level="INFO">Pre-condition</msg>
+<msg time="2025-11-21T17:34:50.671383" level="INFO">Pre-condition</msg>
 <arg>Pre-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-20T17:36:44.540170" elapsed="0.000208"/>
+<status status="PASS" start="2025-11-21T17:34:50.671241" elapsed="0.000206"/>
 </kw>
 <doc>Tiền điều kiện để thực thi test</doc>
-<status status="PASS" start="2025-11-20T17:36:44.539436" elapsed="0.001044"/>
+<status status="PASS" start="2025-11-21T17:34:50.670492" elapsed="0.001055"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Pause video" line="33">
-<kw name="Open YouTube" owner="Common">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-20T17:36:44.541402" level="INFO">Opening browser 'chrome' to base url 'https://www.youtube.com'.</msg>
-<arg>https://www.youtube.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-20T17:36:44.541223" elapsed="12.373686"/>
+<test id="s1-s1-s1-t1" name="Enable Light Mode" line="61">
+<kw name="Connect Adb server" owner="Android">
+<msg time="2025-11-21T17:34:50.672635" level="INFO">Device connected successfully.</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<status status="PASS" start="2025-11-21T17:34:50.672055" elapsed="0.000639"/>
 </kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>1920</arg>
-<arg>1080</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-11-20T17:36:56.915275" elapsed="0.125339"/>
-</kw>
-<status status="PASS" start="2025-11-20T17:36:44.540970" elapsed="12.499832"/>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-11-21T17:34:50.678630" level="INFO">Running command 'adb -s R5CX90YBT0R shell am start -n com.android.settings/com.android.settings.Settings 2&gt;&amp;1'.</msg>
+<arg>adb -s ${DEVICE_SERIAL} shell am start -n com.android.settings/com.android.settings.Settings</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-11-21T17:34:50.673028" elapsed="0.123151"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-20T17:36:58.075712" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-20T17:36:57.075023" elapsed="1.000821"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 1</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.076438" elapsed="0.000327"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-20T17:36:58.077712" level="INFO">Typing text 'conan 944' into text field 'name:search_query'.</msg>
-<arg>name:search_query</arg>
-<arg>conan 944</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.077248" elapsed="0.114954"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 2</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.192665" elapsed="0.000268"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-20T17:36:58.193615" level="INFO">Sending key(s) ('ENTER',) to name:search_query element.</msg>
-<msg time="2025-11-20T17:36:58.479082" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2025-11-20T17:36:58.479161" level="INFO">Releasing special key ENTER.</msg>
-<arg>name:search_query</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.193261" elapsed="0.350143"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 3</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.543923" elapsed="0.000306"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath:(//a[@id='video-title'])[1]</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-20T17:36:58.544644" elapsed="0.785909"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 4</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:36:59.331111" elapsed="0.000278"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-20T17:36:59.332241" level="INFO">Clicking element 'xpath:(//a[@id='video-title'])[1]'.</msg>
-<arg>xpath:(//a[@id='video-title'])[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-20T17:36:59.332059" elapsed="0.480207"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 5</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:36:59.813132" elapsed="0.000773"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-20T17:37:02.815693" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-11-21T17:34:53.797142" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-20T17:36:59.814876" elapsed="3.000924"/>
+<status status="PASS" start="2025-11-21T17:34:50.796645" elapsed="3.000850"/>
 </kw>
-<kw name="Pause Current Video" owner="Common">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-11-20T17:37:02.816899" level="INFO">Executing JavaScript:
-document.querySelector("video").pause();
-Without any arguments.</msg>
-<arg>document.querySelector("video").pause();</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-11-20T17:37:02.816521" elapsed="0.028040"/>
+<kw name="Find text on screen" owner="Helper">
+<msg time="2025-11-21T17:34:54.987465" level="INFO">${screen-exist} = True</msg>
+<var>${screen-exist}</var>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Screen}</arg>
+<status status="PASS" start="2025-11-21T17:34:53.798893" elapsed="1.188777"/>
 </kw>
-<status status="PASS" start="2025-11-20T17:37:02.816206" elapsed="0.028486"/>
+<while condition="${screen-exist} == 'False'">
+<iter>
+<kw name="Run" owner="OperatingSystem">
+<arg>adb -s ${DEVICE_SERIAL} shell input swipe 400 2200</arg>
+<arg>400 1900</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" start="2025-11-21T17:34:54.990356" elapsed="0.000154"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>STEP 6</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-20T17:37:02.845064" elapsed="0.000208"/>
+<kw name="Find text on screen" owner="Helper">
+<var>${screen-exist}</var>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Screen}</arg>
+<status status="NOT RUN" start="2025-11-21T17:34:54.990996" elapsed="0.000133"/>
 </kw>
-<status status="PASS" start="2025-11-20T17:36:44.540559" elapsed="18.305007"/>
+<status status="NOT RUN" start="2025-11-21T17:34:54.989051" elapsed="0.002283"/>
+</iter>
+<status status="NOT RUN" start="2025-11-21T17:34:54.989040" elapsed="0.002470"/>
+</while>
+<kw name="Click by text" owner="Helper">
+<msg time="2025-11-21T17:34:56.270171" level="INFO">Object not found within the timeout period</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Screen}</arg>
+<status status="PASS" start="2025-11-21T17:34:54.992753" elapsed="1.277507"/>
+</kw>
+<kw name="Find text on screen" owner="Helper">
+<msg time="2025-11-21T17:34:56.640602" level="INFO">${result} = True</msg>
+<var>${result}</var>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Light mode}</arg>
+<status status="PASS" start="2025-11-21T17:34:56.270778" elapsed="0.369900"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-21T17:34:56.641816" level="INFO">Light mode found → enabling</msg>
+<arg>Light mode found → enabling</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-21T17:34:56.641630" elapsed="0.000259"/>
+</kw>
+<kw name="Click by text" owner="Helper">
+<msg time="2025-11-21T17:34:58.363912" level="INFO">Object not found within the timeout period</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Light mode}</arg>
+<status status="PASS" start="2025-11-21T17:34:56.642028" elapsed="1.722013"/>
+</kw>
+<status status="PASS" start="2025-11-21T17:34:56.641299" elapsed="1.722824"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>Cannot find the Light mode text</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-11-21T17:34:58.364357" elapsed="0.000035"/>
+</kw>
+<status status="NOT RUN" start="2025-11-21T17:34:58.364198" elapsed="0.000243"/>
+</branch>
+<status status="PASS" start="2025-11-21T17:34:56.641221" elapsed="1.723263"/>
+</if>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-11-21T17:34:58.373328" level="INFO">Running command 'adb -s R5CX90YBT0R shell input keyevent 3 2&gt;&amp;1'.</msg>
+<arg>adb -s ${DEVICE_SERIAL} shell input keyevent 3</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-11-21T17:34:58.364989" elapsed="0.167879"/>
+</kw>
+<status status="PASS" start="2025-11-21T17:34:50.671625" elapsed="7.861948"/>
 </test>
 <kw name="Test-postCondition" owner="Common" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-20T17:37:02.846754" level="INFO">Post-condition</msg>
+<msg time="2025-11-21T17:34:58.535643" level="INFO">Post-condition</msg>
 <arg>Post-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-20T17:37:02.846641" elapsed="0.000169"/>
+<status status="PASS" start="2025-11-21T17:34:58.535505" elapsed="0.000201"/>
 </kw>
 <doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
-<status status="PASS" start="2025-11-20T17:37:02.846435" elapsed="0.000451"/>
+<status status="PASS" start="2025-11-21T17:34:58.535177" elapsed="0.000623"/>
 </kw>
-<status status="PASS" start="2025-11-20T17:36:44.012453" elapsed="18.834477"/>
+<status status="PASS" start="2025-11-21T17:34:50.231441" elapsed="8.304410"/>
 </suite>
-<status status="PASS" start="2025-11-20T17:36:44.011269" elapsed="18.836603"/>
+<status status="PASS" start="2025-11-21T17:34:50.230024" elapsed="8.307132"/>
 </suite>
-<status status="PASS" start="2025-11-20T17:36:43.983332" elapsed="18.865154"/>
+<status status="PASS" start="2025-11-21T17:34:50.201134" elapsed="8.336982"/>
 </suite>
 <statistics>
 <total>
@@ -137,7 +128,7 @@ Without any arguments.</msg>
 <suite>
 <stat name="Robot" id="s1" pass="1" fail="0" skip="0">Robot</stat>
 <stat name="TestCase" id="s1-s1" pass="1" fail="0" skip="0">Robot.TestCase</stat>
-<stat name="01.Test Web" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot.TestCase.01.Test Web</stat>
+<stat name="02. Android" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot.TestCase.02. Android</stat>
 </suite>
 </statistics>
 <errors>
