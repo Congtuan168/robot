@@ -7,7 +7,13 @@ Suite Teardown      Test-postCondition
 ${Phone_Name}   Galaxy A55 5G
 ${Dev mode}    Tùy chọn cho nhà phát triển
 ${Screen}    Màn hình
-${Light mode}    Sáng
+${Light mode}    Tối
+${Software Update}    Cập nhật phần mềm
+${Ready update}    Đã có bản cập nhật phần mềm
+${Continue}    Tiếp tục cập nhật
+
+
+
 
 
 *** Test Cases ***
@@ -64,6 +70,8 @@ Enable Light Mode
 #    Go To Android Settings
     Sleep    3
     ${screen-exist}=     Find Text On Screen    ${DEVICE_SERIAL}     ${Screen}
+
+    #Scroll until the screen to find the ${Screen}
     WHILE     ${screen-exist} == 'False'
          Run    adb -s ${DEVICE_SERIAL} shell input swipe 400 2200  400 1900
          ${screen-exist}=     Find Text On Screen    ${DEVICE_SERIAL}     ${Screen}
@@ -80,30 +88,27 @@ Enable Light Mode
     Run    adb -s ${DEVICE_SERIAL} shell input keyevent 3
 
 
+Check for Software Update
+    Connect Adb Server    ${DEVICE_SERIAL}
+    Run     adb -s ${DEVICE_SERIAL} shell am start -n com.android.settings/com.android.settings.Settings
+    Sleep    3
+    ${result-after-check} =     Find text on screen    ${DEVICE_SERIAL}     ${Ready update}
+
+#    IF    $result==     'True'
+#        Click By Text    ${DEVICE_SERIAL}    ${DEVICE_SERIAL}    Mở
+#        Sleep    3
+#        Click By Text    ${DEVICE_SERIAL}     ${Continue}
 #
-#Enable Light Mode
-#    Connect Adb Server    ${DEVICE_SERIAL}
-#    Run     adb -s ${DEVICE_SERIAL} shell am start -n com.android.settings/com.android.settings.Settings
-#    Sleep   2
-#
-#    # Lần kiểm tra đầu tiên
-#    ${screen_exist}=    Find Text On Screen    ${DEVICE_SERIAL}    ${Screen}
-#
-#    WHILE    '${screen_exist}' == 'False'
-#        Run    adb -s ${DEVICE_SERIAL} shell input swipe 400 2200 400 1500
-#        Sleep    1
-#        ${screen_exist}=    Find Text On Screen    ${DEVICE_SERIAL}    ${Screen}
-#    END
-#
-#    Log    Found screen: ${Screen}
-#
-#    ${result}=    Find Text On Screen    ${DEVICE_SERIAL}    ${Light mode}
-#
-#    IF    '${result}' == 'True'
-#        Log    Light mode found → enabling
-#        Click by text    ${DEVICE_SERIAL}    ${Light mode}
 #    ELSE
-#        Fail    Cannot find the Light mode text
-#    END
-#
-#    Run    adb -s ${DEVICE_SERIAL} shell input keyevent 3
+#        Fail    There is no available software update
+#        Sleep    2
+
+    WHILE    ${result-after-check}== 'False'
+        Run    adb -s ${DEVICE_SERIAL} shell input swipe 400 2200  400 1900
+        ${result-after-check}=     Find Text On Screen    ${DEVICE_SERIAL}     ${Software Update}
+    END
+    
+    Click By Text    ${DEVICE_SERIAL}        ${Software Update}
+    Click By Text    ${DEVICE_SERIAL}        Tải về và cài đặt
+    Click By Text    ${DEVICE_SERIAL}        ${Continue}
+    Run    adb -s ${DEVICE_SERIAL} shell input keyevent 3

@@ -1,123 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-21T17:34:50.199961" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-24T16:58:13.161683" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot" source="C:\Users\Administrator\PycharmProjects\robot">
 <suite id="s1-s1" name="TestCase" source="C:\Users\Administrator\PycharmProjects\robot\TestCase">
 <suite id="s1-s1-s1" name="02. Android" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\02. Android.robot">
 <kw name="Test-precondition" owner="Common" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-21T17:34:50.671383" level="INFO">Pre-condition</msg>
+<msg time="2025-11-24T16:58:13.863590" level="INFO">Pre-condition</msg>
 <arg>Pre-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-21T17:34:50.671241" elapsed="0.000206"/>
+<status status="PASS" start="2025-11-24T16:58:13.863382" elapsed="0.000296"/>
 </kw>
 <doc>Tiền điều kiện để thực thi test</doc>
-<status status="PASS" start="2025-11-21T17:34:50.670492" elapsed="0.001055"/>
+<status status="PASS" start="2025-11-24T16:58:13.862595" elapsed="0.001219"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Enable Light Mode" line="61">
+<test id="s1-s1-s1-t1" name="Check for Software Update" line="91">
 <kw name="Connect Adb server" owner="Android">
-<msg time="2025-11-21T17:34:50.672635" level="INFO">Device connected successfully.</msg>
+<msg time="2025-11-24T16:58:13.865266" level="INFO">Device connected successfully.</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<status status="PASS" start="2025-11-21T17:34:50.672055" elapsed="0.000639"/>
+<status status="PASS" start="2025-11-24T16:58:13.864368" elapsed="0.000988"/>
 </kw>
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-11-21T17:34:50.678630" level="INFO">Running command 'adb -s R5CX90YBT0R shell am start -n com.android.settings/com.android.settings.Settings 2&gt;&amp;1'.</msg>
+<msg time="2025-11-24T16:58:13.872575" level="INFO">Running command 'adb -s R5CX90YBT0R shell am start -n com.android.settings/com.android.settings.Settings 2&gt;&amp;1'.</msg>
 <arg>adb -s ${DEVICE_SERIAL} shell am start -n com.android.settings/com.android.settings.Settings</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-11-21T17:34:50.673028" elapsed="0.123151"/>
+<status status="PASS" start="2025-11-24T16:58:13.866398" elapsed="0.139070"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-21T17:34:53.797142" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-11-24T16:58:17.006263" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-21T17:34:50.796645" elapsed="3.000850"/>
+<status status="PASS" start="2025-11-24T16:58:14.005823" elapsed="3.000796"/>
 </kw>
-<kw name="Find text on screen" owner="Helper">
-<msg time="2025-11-21T17:34:54.987465" level="INFO">${screen-exist} = True</msg>
-<var>${screen-exist}</var>
-<arg>${DEVICE_SERIAL}</arg>
-<arg>${Screen}</arg>
-<status status="PASS" start="2025-11-21T17:34:53.798893" elapsed="1.188777"/>
-</kw>
-<while condition="${screen-exist} == 'False'">
+<while condition="${result-after-check}== 'False'">
 <iter>
 <kw name="Run" owner="OperatingSystem">
 <arg>adb -s ${DEVICE_SERIAL} shell input swipe 400 2200</arg>
 <arg>400 1900</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="NOT RUN" start="2025-11-21T17:34:54.990356" elapsed="0.000154"/>
+<status status="NOT RUN" start="2025-11-24T16:58:17.009129" elapsed="0.000153"/>
 </kw>
 <kw name="Find text on screen" owner="Helper">
-<var>${screen-exist}</var>
+<var>${result-after-check}</var>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>${Screen}</arg>
-<status status="NOT RUN" start="2025-11-21T17:34:54.990996" elapsed="0.000133"/>
+<arg>${Software Update}</arg>
+<status status="NOT RUN" start="2025-11-24T16:58:17.009764" elapsed="0.000135"/>
 </kw>
-<status status="NOT RUN" start="2025-11-21T17:34:54.989051" elapsed="0.002283"/>
+<status status="NOT RUN" start="2025-11-24T16:58:17.007772" elapsed="0.002344"/>
 </iter>
-<status status="NOT RUN" start="2025-11-21T17:34:54.989040" elapsed="0.002470"/>
+<status status="NOT RUN" start="2025-11-24T16:58:17.007762" elapsed="0.002532"/>
 </while>
 <kw name="Click by text" owner="Helper">
-<msg time="2025-11-21T17:34:56.270171" level="INFO">Object not found within the timeout period</msg>
+<msg time="2025-11-24T16:58:28.475277" level="INFO">Object not found within the timeout period</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>${Screen}</arg>
-<status status="PASS" start="2025-11-21T17:34:54.992753" elapsed="1.277507"/>
-</kw>
-<kw name="Find text on screen" owner="Helper">
-<msg time="2025-11-21T17:34:56.640602" level="INFO">${result} = True</msg>
-<var>${result}</var>
-<arg>${DEVICE_SERIAL}</arg>
-<arg>${Light mode}</arg>
-<status status="PASS" start="2025-11-21T17:34:56.270778" elapsed="0.369900"/>
-</kw>
-<if>
-<branch type="IF" condition="'${result}' == 'True'">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-11-21T17:34:56.641816" level="INFO">Light mode found → enabling</msg>
-<arg>Light mode found → enabling</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-21T17:34:56.641630" elapsed="0.000259"/>
+<arg>${Software Update}</arg>
+<status status="PASS" start="2025-11-24T16:58:17.011559" elapsed="11.463956"/>
 </kw>
 <kw name="Click by text" owner="Helper">
-<msg time="2025-11-21T17:34:58.363912" level="INFO">Object not found within the timeout period</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>${Light mode}</arg>
-<status status="PASS" start="2025-11-21T17:34:56.642028" elapsed="1.722013"/>
+<arg>Tải về và cài đặt</arg>
+<status status="PASS" start="2025-11-24T16:58:28.476431" elapsed="0.965408"/>
 </kw>
-<status status="PASS" start="2025-11-21T17:34:56.641299" elapsed="1.722824"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" owner="BuiltIn">
-<arg>Cannot find the Light mode text</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-11-21T17:34:58.364357" elapsed="0.000035"/>
+<kw name="Click by text" owner="Helper">
+<msg time="2025-11-24T16:58:30.908261" level="INFO">Object not found within the timeout period</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>${Continue}</arg>
+<status status="PASS" start="2025-11-24T16:58:29.442714" elapsed="1.465816"/>
 </kw>
-<status status="NOT RUN" start="2025-11-21T17:34:58.364198" elapsed="0.000243"/>
-</branch>
-<status status="PASS" start="2025-11-21T17:34:56.641221" elapsed="1.723263"/>
-</if>
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-11-21T17:34:58.373328" level="INFO">Running command 'adb -s R5CX90YBT0R shell input keyevent 3 2&gt;&amp;1'.</msg>
+<msg time="2025-11-24T16:58:30.930544" level="INFO">Running command 'adb -s R5CX90YBT0R shell input keyevent 3 2&gt;&amp;1'.</msg>
 <arg>adb -s ${DEVICE_SERIAL} shell input keyevent 3</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-11-21T17:34:58.364989" elapsed="0.167879"/>
+<status status="PASS" start="2025-11-24T16:58:30.909778" elapsed="0.243530"/>
 </kw>
-<status status="PASS" start="2025-11-21T17:34:50.671625" elapsed="7.861948"/>
+<status status="PASS" start="2025-11-24T16:58:13.863902" elapsed="17.290811"/>
 </test>
 <kw name="Test-postCondition" owner="Common" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-21T17:34:58.535643" level="INFO">Post-condition</msg>
+<msg time="2025-11-24T16:58:31.160282" level="INFO">Post-condition</msg>
 <arg>Post-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-21T17:34:58.535505" elapsed="0.000201"/>
+<status status="PASS" start="2025-11-24T16:58:31.159759" elapsed="0.000773"/>
 </kw>
 <doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
-<status status="PASS" start="2025-11-21T17:34:58.535177" elapsed="0.000623"/>
+<status status="PASS" start="2025-11-24T16:58:31.158710" elapsed="0.002176"/>
 </kw>
-<status status="PASS" start="2025-11-21T17:34:50.231441" elapsed="8.304410"/>
+<status status="PASS" start="2025-11-24T16:58:13.193138" elapsed="17.967961"/>
 </suite>
-<status status="PASS" start="2025-11-21T17:34:50.230024" elapsed="8.307132"/>
+<status status="PASS" start="2025-11-24T16:58:13.191874" elapsed="17.973664"/>
 </suite>
-<status status="PASS" start="2025-11-21T17:34:50.201134" elapsed="8.336982"/>
+<status status="PASS" start="2025-11-24T16:58:13.162944" elapsed="18.006699"/>
 </suite>
 <statistics>
 <total>
