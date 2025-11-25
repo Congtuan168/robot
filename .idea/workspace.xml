@@ -7,8 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8917a972-b109-48d1-bf07-c5ab45911fd4" name="Changes" comment="Practice: Android automation and Light/Dark mode testing">
+    <list default="true" id="8917a972-b109-48d1-bf07-c5ab45911fd4" name="Changes" comment="Practice: Check available software update">
+      <change afterPath="$PROJECT_DIR$/Plugin/Android2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugin/Android_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugin/Helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plugin/Helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/Common.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resource/Common.resource" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCase/02. Android.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/02. Android.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
@@ -66,15 +70,21 @@
     "Robot Framework.run [Search in Google].executor": "Run",
     "Robot Framework.run [Verify About Phone].executor": "Run",
     "Robot.01.test_web.robot.executor": "Run",
+    "Robot.Back to Home.executor": "Run",
     "Robot.Check Dev Mode Exist.executor": "Run",
     "Robot.Check Dev Mode.executor": "Run",
+    "Robot.Check batery left and enable batery saving.executor": "Run",
     "Robot.Check for Software Update.executor": "Run",
     "Robot.Disable Dark Mode.executor": "Run",
     "Robot.Enable Dark Mode.executor": "Run",
     "Robot.Enable Light Mode.executor": "Run",
+    "Robot.Enable Màn hình chờ 2.executor": "Run",
+    "Robot.Enable Màn hình chờ.executor": "Run",
+    "Robot.Get Battery Time Remaining.executor": "Run",
     "Robot.Open Dark Mode.executor": "Run",
     "Robot.Pause video.executor": "Run",
     "Robot.Search in Google.executor": "Run",
+    "Robot.Test scrolling.executor": "Run",
     "Robot.Verify About Phone.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -89,7 +99,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -105,8 +115,8 @@
       <recent name="E:\code\test\Plugin" />
     </key>
   </component>
-  <component name="RunManager" selected="Robot.Check for Software Update">
-    <configuration name="Check Dev Mode Exist" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+  <component name="RunManager" selected="Robot.Check batery left and enable batery saving">
+    <configuration name="Back to Home" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,7 +131,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Check Dev Mode Exist&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Back to Home&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -129,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Check Dev Mode" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Check batery left and enable batery saving" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,7 +154,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Check Dev Mode&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Check batery left and enable batery saving&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -152,7 +162,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Check for Software Update" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Enable Màn hình chờ 2" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,7 +177,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Check for Software Update&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Enable Màn hình chờ 2&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -175,7 +185,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Enable Light Mode" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Get Battery Time Remaining" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,7 +200,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Enable Light Mode&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Get Battery Time Remaining&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -198,7 +208,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Verify About Phone" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Test scrolling" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,7 +223,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Verify About Phone&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot.TestCase.02. Android.Test scrolling&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -223,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Robot.Check for Software Update" />
-        <item itemvalue="Robot.Enable Light Mode" />
-        <item itemvalue="Robot.Verify About Phone" />
-        <item itemvalue="Robot.Check Dev Mode Exist" />
-        <item itemvalue="Robot.Check Dev Mode" />
+        <item itemvalue="Robot.Check batery left and enable batery saving" />
+        <item itemvalue="Robot.Get Battery Time Remaining" />
+        <item itemvalue="Robot.Test scrolling" />
+        <item itemvalue="Robot.Enable Màn hình chờ 2" />
+        <item itemvalue="Robot.Back to Home" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +262,8 @@
       <workItem from="1763608979963" duration="31830000" />
       <workItem from="1763709734194" duration="8766000" />
       <workItem from="1763949678652" duration="376000" />
-      <workItem from="1763975919596" duration="3902000" />
+      <workItem from="1763975919596" duration="4190000" />
+      <workItem from="1764036203387" duration="15217000" />
     </task>
     <task id="LOCAL-00001" summary="Practice: Pause a video on Youtube and enable Dark Mode on website">
       <option name="closed" value="true" />
@@ -286,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763721917997</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Practice: Check available software update">
+      <option name="closed" value="true" />
+      <created>1763980001006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763980001006</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,19 +318,26 @@
     <MESSAGE value="Practice: Pause a video on Youtube and enable Dark Mode on website" />
     <MESSAGE value="Practice: Pause a video on Youtube catching some err" />
     <MESSAGE value="Practice: Android automation and Light/Dark mode testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Practice: Android automation and Light/Dark mode testing" />
+    <MESSAGE value="Practice: Check available software update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Practice: Check available software update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/robot$Search_in_Google.coverage" NAME="Search in Google Coverage Results" MODIFIED="1763624664930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/robot$Check_for_Software_Update.coverage" NAME="Check for Software Update Coverage Results" MODIFIED="1763978292700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Test_scrolling.coverage" NAME="Test scrolling Coverage Results" MODIFIED="1764055601562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Check_for_Software_Update.coverage" NAME="Check for Software Update Coverage Results" MODIFIED="1764037114362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Check_Dev_Mode_Exist.coverage" NAME="Check Dev Mode Exist Coverage Results" MODIFIED="1763712051390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Verify_About_Phone.coverage" NAME="Verify About Phone Coverage Results" MODIFIED="1763712071171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Enable_Màn_hình_ch.coverage" NAME="Enable Màn hình chờ Coverage Results" MODIFIED="1764038398694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Pause_video.coverage" NAME="Pause video Coverage Results" MODIFIED="1763635003525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Enable_Màn_hình_ch_2.coverage" NAME="Enable Màn hình chờ 2 Coverage Results" MODIFIED="1764052392850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Get_Battery_Time_Remaining.coverage" NAME="Get Battery Time Remaining Coverage Results" MODIFIED="1764057337483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Android.coverage" NAME="Android Coverage Results" MODIFIED="1763621197667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Plugin" />
     <SUITE FILE_PATH="coverage/robot$Disable_Dark_Mode.coverage" NAME="Disable Dark Mode Coverage Results" MODIFIED="1763620634395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Check_batery_left_and_enable_batery_saving.coverage" NAME="Check batery left and enable batery saving Coverage Results" MODIFIED="1764057373565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$01_test_web_robot.coverage" NAME="01.test_web.robot Coverage Results" MODIFIED="1763623186109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Enable_Light_Mode.coverage" NAME="Enable Light Mode Coverage Results" MODIFIED="1763976140830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Check_Dev_Mode.coverage" NAME="Check Dev Mode Coverage Results" MODIFIED="1763710906386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/robot$Back_to_Home.coverage" NAME="Back to Home Coverage Results" MODIFIED="1764039016321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Open_Dark_Mode.coverage" NAME="Open Dark Mode Coverage Results" MODIFIED="1763620080575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/robot$Enable_Dark_Mode.coverage" NAME="Enable Dark Mode Coverage Results" MODIFIED="1763624642992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

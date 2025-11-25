@@ -81,7 +81,7 @@ class Helper:
             device = u2.connect(device_serial)
         except Exception as e:
             print(e)
-        timeout = 10
+        timeout = 3
         start_time = time.time()
         while time.time() - start_time < timeout:
             if device(text=textObject).exists:

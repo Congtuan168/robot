@@ -5,6 +5,7 @@ Library     Process
 Library     String
 Library     ../Plugin/Helper.py
 Library     ../Plugin/Android.py
+Library     ../Plugin/Android2.py
 
 *** Variables ***
 ${URL}     https://robotcode.io/

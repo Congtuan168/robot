@@ -1,94 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-24T16:58:13.161683" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-25T14:56:13.999298" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot" source="C:\Users\Administrator\PycharmProjects\robot">
 <suite id="s1-s1" name="TestCase" source="C:\Users\Administrator\PycharmProjects\robot\TestCase">
 <suite id="s1-s1-s1" name="02. Android" source="C:\Users\Administrator\PycharmProjects\robot\TestCase\02. Android.robot">
 <kw name="Test-precondition" owner="Common" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-24T16:58:13.863590" level="INFO">Pre-condition</msg>
+<msg time="2025-11-25T14:56:14.580059" level="INFO">Pre-condition</msg>
 <arg>Pre-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-24T16:58:13.863382" elapsed="0.000296"/>
+<status status="PASS" start="2025-11-25T14:56:14.579912" elapsed="0.000214"/>
 </kw>
 <doc>Tiền điều kiện để thực thi test</doc>
-<status status="PASS" start="2025-11-24T16:58:13.862595" elapsed="0.001219"/>
+<status status="PASS" start="2025-11-25T14:56:14.579161" elapsed="0.001075"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Check for Software Update" line="91">
+<test id="s1-s1-s1-t1" name="Check batery left and enable batery saving" line="182">
 <kw name="Connect Adb server" owner="Android">
-<msg time="2025-11-24T16:58:13.865266" level="INFO">Device connected successfully.</msg>
+<msg time="2025-11-25T14:56:14.581508" level="INFO">Device connected successfully.</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<status status="PASS" start="2025-11-24T16:58:13.864368" elapsed="0.000988"/>
+<status status="PASS" start="2025-11-25T14:56:14.580945" elapsed="0.000631"/>
 </kw>
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-11-24T16:58:13.872575" level="INFO">Running command 'adb -s R5CX90YBT0R shell am start -n com.android.settings/com.android.settings.Settings 2&gt;&amp;1'.</msg>
+<msg time="2025-11-25T14:56:14.588389" level="INFO">Running command 'adb -s R5CX90YBT0R shell am start -n com.android.settings/com.android.settings.Settings 2&gt;&amp;1'.</msg>
 <arg>adb -s ${DEVICE_SERIAL} shell am start -n com.android.settings/com.android.settings.Settings</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-11-24T16:58:13.866398" elapsed="0.139070"/>
+<status status="PASS" start="2025-11-25T14:56:14.581937" elapsed="0.139336"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-24T16:58:17.006263" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-11-25T14:56:17.722651" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-24T16:58:14.005823" elapsed="3.000796"/>
+<status status="PASS" start="2025-11-25T14:56:14.722196" elapsed="3.000807"/>
 </kw>
-<while condition="${result-after-check}== 'False'">
-<iter>
-<kw name="Run" owner="OperatingSystem">
-<arg>adb -s ${DEVICE_SERIAL} shell input swipe 400 2200</arg>
-<arg>400 1900</arg>
-<doc>Runs the given command in the system and returns the output.</doc>
-<status status="NOT RUN" start="2025-11-24T16:58:17.009129" elapsed="0.000153"/>
-</kw>
-<kw name="Find text on screen" owner="Helper">
-<var>${result-after-check}</var>
+<kw name="Is Text Existed" owner="Android2">
+<msg time="2025-11-25T14:56:19.842971" level="INFO">Object not found within the timeout period</msg>
+<msg time="2025-11-25T14:56:19.843521" level="INFO">${check-for-battery} = False</msg>
+<var>${check-for-battery}</var>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>${Software Update}</arg>
-<status status="NOT RUN" start="2025-11-24T16:58:17.009764" elapsed="0.000135"/>
+<arg>Pin</arg>
+<status status="PASS" start="2025-11-25T14:56:17.724426" elapsed="2.119239"/>
 </kw>
-<status status="NOT RUN" start="2025-11-24T16:58:17.007772" elapsed="0.002344"/>
+<while condition="'${check-for-battery}'.lower() == 'false'">
+<iter>
+<kw name="Scrolling" owner="Android2">
+<msg time="2025-11-25T14:56:20.475015" level="INFO">Command executed successfully</msg>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>input swipe 540 1600 540 400 500</arg>
+<status status="PASS" start="2025-11-25T14:56:19.846449" elapsed="0.628647"/>
+</kw>
+<kw name="Is Text Existed" owner="Android2">
+<msg time="2025-11-25T14:56:21.026907" level="INFO">${check-for-battery} = True</msg>
+<var>${check-for-battery}</var>
+<arg>${DEVICE_SERIAL}</arg>
+<arg>Pin</arg>
+<status status="PASS" start="2025-11-25T14:56:20.475251" elapsed="0.551843"/>
+</kw>
+<status status="PASS" start="2025-11-25T14:56:19.845033" elapsed="1.182336"/>
 </iter>
-<status status="NOT RUN" start="2025-11-24T16:58:17.007762" elapsed="0.002532"/>
+<status status="PASS" start="2025-11-25T14:56:19.845018" elapsed="1.183103"/>
 </while>
 <kw name="Click by text" owner="Helper">
-<msg time="2025-11-24T16:58:28.475277" level="INFO">Object not found within the timeout period</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>${Software Update}</arg>
-<status status="PASS" start="2025-11-24T16:58:17.011559" elapsed="11.463956"/>
+<arg>Pin</arg>
+<status status="PASS" start="2025-11-25T14:56:21.029505" elapsed="1.422829"/>
 </kw>
 <kw name="Click by text" owner="Helper">
+<msg time="2025-11-25T14:56:24.616446" level="INFO">Object not found within the timeout period</msg>
 <arg>${DEVICE_SERIAL}</arg>
-<arg>Tải về và cài đặt</arg>
-<status status="PASS" start="2025-11-24T16:58:28.476431" elapsed="0.965408"/>
-</kw>
-<kw name="Click by text" owner="Helper">
-<msg time="2025-11-24T16:58:30.908261" level="INFO">Object not found within the timeout period</msg>
-<arg>${DEVICE_SERIAL}</arg>
-<arg>${Continue}</arg>
-<status status="PASS" start="2025-11-24T16:58:29.442714" elapsed="1.465816"/>
+<arg>Tiết kiệm pin</arg>
+<status status="PASS" start="2025-11-25T14:56:22.453709" elapsed="2.163059"/>
 </kw>
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-11-24T16:58:30.930544" level="INFO">Running command 'adb -s R5CX90YBT0R shell input keyevent 3 2&gt;&amp;1'.</msg>
+<msg time="2025-11-25T14:56:24.635025" level="INFO">Running command 'adb -s R5CX90YBT0R shell input keyevent 3 2&gt;&amp;1'.</msg>
 <arg>adb -s ${DEVICE_SERIAL} shell input keyevent 3</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-11-24T16:58:30.909778" elapsed="0.243530"/>
+<status status="PASS" start="2025-11-25T14:56:24.618121" elapsed="0.124376"/>
 </kw>
-<status status="PASS" start="2025-11-24T16:58:13.863902" elapsed="17.290811"/>
+<status status="PASS" start="2025-11-25T14:56:14.580430" elapsed="10.162578"/>
 </test>
 <kw name="Test-postCondition" owner="Common" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-11-24T16:58:31.160282" level="INFO">Post-condition</msg>
+<msg time="2025-11-25T14:56:24.744617" level="INFO">Post-condition</msg>
 <arg>Post-condition</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-11-24T16:58:31.159759" elapsed="0.000773"/>
+<status status="PASS" start="2025-11-25T14:56:24.744511" elapsed="0.000157"/>
 </kw>
 <doc>Trả lại môi trường ban đầu để sẵn sàng cho test case mới</doc>
-<status status="PASS" start="2025-11-24T16:58:31.158710" elapsed="0.002176"/>
+<status status="PASS" start="2025-11-25T14:56:24.744286" elapsed="0.000458"/>
 </kw>
-<status status="PASS" start="2025-11-24T16:58:13.193138" elapsed="17.967961"/>
+<status status="PASS" start="2025-11-25T14:56:14.033788" elapsed="10.711001"/>
 </suite>
-<status status="PASS" start="2025-11-24T16:58:13.191874" elapsed="17.973664"/>
+<status status="PASS" start="2025-11-25T14:56:14.032106" elapsed="10.714019"/>
 </suite>
-<status status="PASS" start="2025-11-24T16:58:13.162944" elapsed="18.006699"/>
+<status status="PASS" start="2025-11-25T14:56:14.000759" elapsed="10.746491"/>
 </suite>
 <statistics>
 <total>
