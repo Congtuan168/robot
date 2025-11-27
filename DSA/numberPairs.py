@@ -4,6 +4,7 @@
 # Return the result as a flat array containing all numbers from the valid pairs.
 
 
+#ý tưởng: Dùng 2 vòng for. Vòng for đầu tiên chạy từ index [0 - end], vòng for thứ 2 chạy từ [1 - end]. Tại vị trí a[for1] + a[1 - end] => Nếu = targetNumber, append vào array rỗng
 def calculateTwoNumber(targetNumber):
     #Nhap vao array bởi user
     array = list(map(int, input(f'Enter an array: ').split()))
