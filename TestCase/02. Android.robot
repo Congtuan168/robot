@@ -7,7 +7,7 @@ Suite Teardown      Test-postCondition
 ${Phone_Name}   Galaxy A55 5G
 ${Dev mode}    Tùy chọn cho nhà phát triển
 ${Screen}    Màn hình
-${Light mode}    Tối
+${Light mode}    Sáng
 ${Software Update}    Cập nhật phần mềm
 ${Ready update}    Đã có bản cập nhật phần mềm
 ${Continue}    Tiếp tục cập nhật
