@@ -1,4 +1,7 @@
 #Write a function that count the number of characters in the input appeared in string (input by user)
+# ý tưởng: Loop qua inputSentence. Sử dụng Dictionary count_character để lưu cặp key - value.
+# Dùng vòng loop: tìm số lần lặp lại của 1 key. Nếu ko tìm thấy lặp lại, gán = 1
+
 
 def countCharacterFromString():
     inputSentence = input("Enter a string: ")
